@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mariadb
+  namespace: default
   labels:
     app: mariadb
 spec:
@@ -40,6 +41,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: admin-service
+  namespace: default
   labels:
     app: admin
 spec:
@@ -67,6 +69,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: visitor-service
+  namespace: default
   labels:
     app: visitor
 spec:
@@ -94,6 +97,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-service
+  namespace: default
   labels:
     app: frontend
 spec:
