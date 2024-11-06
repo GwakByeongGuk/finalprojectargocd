@@ -6,16 +6,16 @@ replicaCount: 1
 
 image:
   frontend:
-    repository: GwakByeongGuk/prj-frontend
+    repository: gwakbyeongguk/prj-frontend
 
   mariadb:
     repository: mariadb:10.6.19-focal
 
   admin:
-    repository: GwakByeongGuk/prj-admin
+    repository: gwakbyeongguk/prj-admin
 
   visitor:
-    repository: GwakByeongGuk/prj-visitor
+    repository: gwakbyeongguk/prj-visitor
 
 service:
   frontend:
