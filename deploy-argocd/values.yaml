@@ -7,15 +7,19 @@ replicaCount: 1
 image:
   frontend:
     repository: gwakbyeongguk/prj-frontend
+    tag: "latest"
 
   mariadb:
     repository: mariadb:10.6.19-focal
+    tag: "latest"
 
   admin:
     repository: gwakbyeongguk/prj-admin
+    tag: "latest"
 
   visitor:
     repository: gwakbyeongguk/prj-visitor
+    tag: "latest"
 
 service:
   frontend:
