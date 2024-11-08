@@ -7,6 +7,8 @@ replicaCount: 1
 image:
   frontend:
     repository: gwakbyeongguk/prj-frontend
+    tag: "20241108.50"
+    repository: gwakbyeongguk/prj-frontend
     tag: "20241108.49"
     repository: gwakbyeongguk/prj-frontend
     tag: "latest"
@@ -17,11 +19,15 @@ image:
 
   admin:
     repository: gwakbyeongguk/prj-admin
+    tag: "20241108.50"
+    repository: gwakbyeongguk/prj-admin
     tag: "20241108.49"
     repository: gwakbyeongguk/prj-admin
     tag: "latest"
 
   visitor:
+    repository: gwakbyeongguk/prj-visitor
+    tag: "20241108.50"
     repository: gwakbyeongguk/prj-visitor
     tag: "20241108.49"
     repository: gwakbyeongguk/prj-visitor
@@ -29,6 +35,8 @@ image:
 
 service:
   frontend:
+    repository: gwakbyeongguk/prj-frontend
+    tag: "20241108.50"
     repository: gwakbyeongguk/prj-frontend
     tag: "20241108.49"
     port: 3000
@@ -38,10 +46,14 @@ service:
 
   admin:
     repository: gwakbyeongguk/prj-admin
+    tag: "20241108.50"
+    repository: gwakbyeongguk/prj-admin
     tag: "20241108.49"
     port: 8000
 
   visitor:
+    repository: gwakbyeongguk/prj-visitor
+    tag: "20241108.50"
     repository: gwakbyeongguk/prj-visitor
     tag: "20241108.49"
     port: 8050
