@@ -8,10 +8,6 @@ image:
   frontend:
     repository: gwakbyeongguk/prj-frontend
     tag: "20241108.59"
-    repository: gwakbyeongguk/prj-frontend
-    tag: "20241108.59"
-    repository: gwakbyeongguk/prj-frontend
-    tag: "20241108.59"
 
   mariadb:
     repository: mariadb:10.6.19-focal
@@ -20,23 +16,12 @@ image:
   admin:
     repository: gwakbyeongguk/prj-admin
     tag: "20241108.59"
-    repository: gwakbyeongguk/prj-admin
-    tag: "20241108.59"
-    repository: gwakbyeongguk/prj-admin
-    tag: "20241108.59"
 
   visitor:
     repository: gwakbyeongguk/prj-visitor
     tag: "20241108.59"
-    repository: gwakbyeongguk/prj-visitor
-    tag: "20241108.59"
-    repository: gwakbyeongguk/prj-visitor
-    tag: "20241108.59"
-
 service:
   frontend:
-    repository: gwakbyeongguk/prj-frontend
-    tag: "20241108.59"
     repository: gwakbyeongguk/prj-frontend
     tag: "20241108.59"
     port: 3000
@@ -47,13 +32,9 @@ service:
   admin:
     repository: gwakbyeongguk/prj-admin
     tag: "20241108.59"
-    repository: gwakbyeongguk/prj-admin
-    tag: "20241108.59"
     port: 8000
 
   visitor:
-    repository: gwakbyeongguk/prj-visitor
-    tag: "20241108.59"
     repository: gwakbyeongguk/prj-visitor
     tag: "20241108.59"
     port: 8050
