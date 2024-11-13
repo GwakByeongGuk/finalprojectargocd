@@ -90,6 +90,10 @@ spec:
       labels:
         app: visitor
     spec:
+      initContainers:
+        - name: wait-for-admin-service
+          image: busybox
+          command: ['sh', '-c', 'until nc -z admin-service 8000; do echo waiting for admin-service; sleep 2; done']
       containers:
         - name: visitor-container
           image: "{{ .Values.image.visitor.repository }}:{{ .Values.image.visitor.tag }}"
