@@ -62,8 +62,8 @@ spec:
           image: busybox
           command: [ 'sh', '-c', 'until nc -z mariadb-service 3306; do echo waiting for mariadb; sleep 2; done' ]
       containers:
-        - name: admin-container
-          image: "{{ .Values.image.admin.repository }}:{{ .Values.image.admin.tag }}"
+        - name: visitor-container
+          image: "{{ .Values.image.visitor.repository }}:{{ .Values.image.visitor.tag }}"
           ports:
             - containerPort: 8000
           env:
