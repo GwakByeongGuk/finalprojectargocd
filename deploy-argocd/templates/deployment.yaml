@@ -96,7 +96,7 @@ spec:
           command: ['sh', '-c', 'until nc -z admin-service 8000; do echo waiting for admin-service; sleep 2; done']
       containers:
         - name: visitor-container
-          image: "{{.Values.image.visitor.repository}}:{{ .Values.image.visitor.tag }}"
+          image: "{{ .Values.image.visitor.repository }}:{{ .Values.image.visitor.tag }}"
           ports:
             - containerPort: 8050
           env:
