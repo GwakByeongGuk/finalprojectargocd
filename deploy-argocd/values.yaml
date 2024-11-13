@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   frontend:
     repository: gwakbyeongguk/prj-frontend
-    tag: "20241108.12"
+    tag: "20241108.13"
 
   mariadb:
     repository: mariadb:10.6.19-focal
@@ -15,15 +15,15 @@ image:
 
   admin:
     repository: gwakbyeongguk/prj-admin
-    tag: "20241108.12"
+    tag: "20241108.13"
 
   visitor:
     repository: gwakbyeongguk/prj-visitor
-    tag: "20241108.12"
+    tag: "20241108.13"
 service:
   frontend:
     repository: gwakbyeongguk/prj-frontend
-    tag: "20241108.12"
+    tag: "20241108.13"
     port: 3000
 
   mariadb:
@@ -31,10 +31,10 @@ service:
 
   admin:
     repository: gwakbyeongguk/prj-admin
-    tag: "20241108.12"
+    tag: "20241108.13"
     port: 8000
 
   visitor:
     repository: gwakbyeongguk/prj-visitor
-    tag: "20241108.12"
+    tag: "20241108.13"
     port: 8050
