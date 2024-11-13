@@ -89,6 +89,7 @@ spec:
     metadata:
       labels:
         app: visitor
+    spec:
       containers:
         - name: visitor-container
           image: "{{ .Values.image.visitor.repository }}:{{ .Values.image.visitor.tag }}"
