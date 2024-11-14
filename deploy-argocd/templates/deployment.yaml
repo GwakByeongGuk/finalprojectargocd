@@ -1,11 +1,36 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: nfs
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mariadb-nfs-pv
+spec:
+  capacity:
+    storage: 5Gi  
+  accessModes:
+    - ReadWriteMany  
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  nfs:
+    path: /mnt/data/mariadb 
+    server: <NFS_SERVER_IP>  
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mariadb
   labels:
     app: mariadb
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
 spec:
   replicas: 1
   selector:
@@ -18,7 +43,7 @@ spec:
     spec:
       containers:
         - name: mariadb
-          image: {{.Values.image.mariadb.repository}}
+          image: mariadb:10.5  # MariaDB 이미지 버전
           ports:
             - containerPort: 3306
           env:
@@ -33,10 +58,15 @@ spec:
           volumeMounts:
             - name: mariadb-init
               mountPath: /docker-entrypoint-initdb.d/
+            - name: mariadb-storage
+              mountPath: /var/lib/mysql  # MariaDB의 기본 데이터 저장 경로
       volumes:
         - name: mariadb-init
           configMap:
             name: mariadb-init
+        - name: mariadb-storage
+          persistentVolumeClaim:
+            claimName: mariadb-pvc
 
 ---
 apiVersion: apps/v1
