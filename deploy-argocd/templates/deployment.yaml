@@ -39,7 +39,7 @@ spec:
             name: mariadb-init
         - name: mariadb-storage
           persistentVolumeClaim:
-            claimName: mariadb-nfs-pvc
+            claimName: mariadb-pvc
 
 ---
 apiVersion: apps/v1
