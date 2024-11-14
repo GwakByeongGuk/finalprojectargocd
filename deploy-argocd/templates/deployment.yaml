@@ -4,6 +4,8 @@ metadata:
   name: mariadb
   labels:
     app: mariadb
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   replicas: 1
   selector:
@@ -16,7 +18,7 @@ spec:
     spec:
       containers:
         - name: mariadb
-          image: mariadb:10.5  # MariaDB 이미지 버전
+          image: {{.Values.image.mariadb.repository}}:{{.Values.image.mariadb.tag}}
           ports:
             - containerPort: 3306
           env:
@@ -31,16 +33,10 @@ spec:
           volumeMounts:
             - name: mariadb-init
               mountPath: /docker-entrypoint-initdb.d/
-            - name: mariadb-storage
-              mountPath: /var/lib/mysql  # MariaDB의 기본 데이터 저장 경로
       volumes:
         - name: mariadb-init
           configMap:
             name: mariadb-init
-        - name: mariadb-storage
-          persistentVolumeClaim:
-            claimName: mariadb-pvc
-
 ---
 apiVersion: apps/v1
 kind: Deployment
