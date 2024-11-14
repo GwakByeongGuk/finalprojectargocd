@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: mariadb
-          image: {{.Values.image.mariadb.repository}}:{{.Values.image.mariadb.tag}}
+          image: {{.Values.image.mariadb.repository}}
           ports:
             - containerPort: 3306
           env:
